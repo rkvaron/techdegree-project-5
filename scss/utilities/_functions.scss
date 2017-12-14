@@ -1,3 +1,15 @@
 // ==========================================================================
 // FUNCTIONS styles
 // ==========================================================================
+// Import if Google Fonts URL is defined
+
+@if variable-exists($font-url--google) {
+  @import url($font-url--google);
+}
+
+// Calculate em values
+
+// Call the color palette modifiers in color values
+
+
+// Set the "context" width for the grid
