@@ -1,11 +1,11 @@
 // ==========================================================================
-// GLOBAL variables
+// GLOBAL -declare variables
 // ==========================================================================
 
 //Font Stacks
 $font-url--google        : 'http://fonts.googleapis.com/css?family=Arimo:100,300,400,700,900';
-$font-family--primary    : 'Arimo', Helvetica, 'Arial Narrow', Arial, sans-serif;
-$font-family--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-stack--primary    : 'Arimo', Helvetica, Arial, sans-serif;
+$font-stack--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 // Font Weights
 
@@ -15,25 +15,28 @@ $font-weight--medium     : 400;
 $font-weight--bold       : 700;
 $font-weight--ultra-bold : 900;
 
-// Descriptive Base Colors
+// Descriptive Color Variables
 
 $white : #fff;
-$black : #0b0b0b;
-$grey  : #797e83;
+$black : #1A1110;
+$grey  : #606060;
 
-$fountain-blue  : #52bab3;
-$emerald        : #5ece7f;
-$sunglo         : #e67478;
-$coral          : #ff784f;
-$purple-majesty : #9279c3;
-$scooter        : #39add1;
+$viking         : #58e1c1;
+$malibu         : #55defd;
+$bright-gray    : #384047;
+$emerald        : #63cc82;
+$sunglo         : #e4757a;
+$coral          : #fd7856;
+$purple-majesty : #927bc1;
 
 // Color Usage
 
-$color-primary   : $fountain-blue;
-$color-secondary : $scooter;
-$color-accent    : $emerald;
+$color-primary   : $viking;
+$color-secondary : $malibu;
+$color-accent    : $bright-gray;
 $color-shadow    : rgba($black, .2);
+
+
 
 // Color Palette Modifiers
 
@@ -56,7 +59,7 @@ $color-palettes: (
 // UI Colors
 
 $ui-colors: (
-  default : $fountain-blue,
+  default : $malibu,
   success : $emerald,
   error   : $sunglo,
   warning : $coral,
@@ -84,10 +87,10 @@ $path--rel      : "../img";
 
 // Grid
 
-$g-col-width    : 65px !default;
+$g-col-width    : 72px !default;
 $g-gutter-width : 20px !default;
 $g-col-count    : 12 !default;
-$g-cont-max-w   : 1050px !default;
+$g-cont-max-w   : 1100px !default;
 
 // Breakpoints
 

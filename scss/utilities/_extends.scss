@@ -1,3 +1,33 @@
 // ==========================================================================
 // EXTENDS styles
 // ==========================================================================
+
+// Clearfix
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// text related
+
+%centertext {
+  text-align: center;
+}
+
+%text {
+  color: palette(grey);
+  font-size: $base__font-size;
+  font-family: $font-stack--primary;
+  line-height: ($base__line/$base__font-size);
+}
+
+//Centering Elements
+%center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

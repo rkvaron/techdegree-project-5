@@ -1,3 +1,37 @@
 // ==========================================================================
 // GRID styles
 // ==========================================================================
+
+//Calculate grid column width
+
+@include mq(medium){
+  @for $i from 1 through $g-col-count {
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width);
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+    .grid__col--#{$i} {
+      width: percentage($target/$context);
+    }
+  }
+}
+
+.container {
+  	@extend %clearfix;
+  	@extend %center;
+  	width: 80%;
+
+  	// Make nested grid container 100%
+  	[class*="grid__col--"] > & {
+  		width: 100%;
+  	}
+
+  	// Set max-width for grid container
+  	@include mq(large) {
+  		max-width: $g-cont-max-w;
+  	}
+  }
+
+.centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
