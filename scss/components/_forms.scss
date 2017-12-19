@@ -1,3 +1,27 @@
 // ==========================================================================
 // FORM styles
 // ==========================================================================
+
+.form {
+  text-size: .7em;
+
+  &__label--hidden {
+    display: none;
+
+  }
+  &__input {
+    width: 100%;
+    @extend %clearfix;
+    border: none;
+    border-bottom: 5px solid $color-primary;
+    font-size: .85em;
+    line-height: 2em;
+    font-weight: $font-weight--bold;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  .btn--default {
+    width: 100%;
+    @extend %clearfix;
+  }
+}

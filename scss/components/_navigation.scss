@@ -1,23 +1,50 @@
 // ==========================================================================
 // NAVIGATION styles
 // ==========================================================================
-
-.nav__item {
-
-  padding: em(12px) 0;
-  margin: 10px;
-  @extend %centertext;
-  border-radius: $br--default;
-  &:hover{
-    background-color: $color-primary;
-  color: $white;
+.grid__row,
+.nav {
+    display: flex;
+    flex-direction: column;
   }
 
-  &  a {
-    text-decoration: none;
-    color: $grey;
-    &:hover {
-      color: $white;
-    }
+.grid__row {
+  @include mq(medium){
+    flex-direction: row;
+  }
+}
+
+.nav {
+  margin-top: 2em;
+  margin-bottom: em(50px);
+  @extend %center;
+  @include mq(medium){
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10%;
+  }
+}
+
+.nav__item a {
+  @extend %center;
+  @extend %centertext;
+  ßmargin: 0 em(10px);
+  font-weight: $font-weight--light;
+  font-size: 1.05em;
+  padding: em(8px) em(10px);
+  margin: 5px 0;
+  border-radius: $br--default;
+  text-decoration: none;
+  color: palette(grey, light);
+  &:hover{
+    background-color: $color-primary;
+    color: $white;
+  }
+  @include mq(medium) {
+    display: inline-block;
+  }
+}
+.nav__item {
+  @include mq(medium) {
+    margin: em(20px) em(10px);
   }
 }

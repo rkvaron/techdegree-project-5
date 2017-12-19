@@ -17,7 +17,7 @@
 .container {
   	@extend %clearfix;
   	@extend %center;
-  	width: 80%;
+  	width: 85%;
 
   	// Make nested grid container 100%
   	[class*="grid__col--"] > & {

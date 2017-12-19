@@ -3,14 +3,37 @@
 // ==========================================================================
 .link {
   color: $color-secondary;
+    text-decoration: none;
+    font-weight: $font-weight--bold;
 }
 
 .blockquote {
-
+  border-radius: $br--default;
+  border-left: 8px solid $color-primary;
+  padding-left: 1em;
+  font-size: 1.4em;
+  line-height: 1.3em;
+  font-style: italic;
+  font-weight: $font-weight--light;
+  color: palette(grey, light);
+  margin-bottom: 2em;
 }
 
 .headline {
   &--primary{
     color: $color-primary;
+    margin-left: em(10px);
+    margin-bottom: em(20px);
+  }
+  &--secondary{
+    color: palette(grey, x-light);
+    font-weight: $font-weight--light;
+    margin: 1.2em 0;
+  }
+}
+.card {
+  padding-bottom: em(60px);
+  p {
+    padding-right: 2em;
   }
 }
