@@ -12,3 +12,11 @@
   @extend %clearfix;
   padding: 1em 0;
 }
+
+.img--frame {
+  padding: 1em;
+  border: 1px solid palette(grey, x-light);
+  @include mq(medium) {
+      margin: 2em;
+  }
+}

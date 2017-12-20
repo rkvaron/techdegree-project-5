@@ -29,10 +29,12 @@
     color: palette(grey, x-light);
     font-weight: $font-weight--light;
     margin: 1.2em 0;
+    padding-top: em(30px);
+    padding-bottom: em(30px);
   }
 }
 .card {
-  padding-bottom: em(60px);
+
   p {
     padding-right: 2em;
   }

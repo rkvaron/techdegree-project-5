@@ -2,15 +2,10 @@
 // GRID styles
 // ==========================================================================
 
-//Calculate grid column width
-
+//Calculate grid column width & create classes
+.grid__col{
 @include mq(medium){
-  @for $i from 1 through $g-col-count {
-    $context: g-context($g-col-width, $g-col-count, $g-gutter-width);
-    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
-    .grid__col--#{$i} {
-      width: percentage($target/$context);
-    }
+    @include g-columns;
   }
 }
 
@@ -29,6 +24,17 @@
   		max-width: $g-cont-max-w;
   	}
   }
+
+.grid__row {
+  @extend %clearfix;
+}
+
+div[class*="theme__colors"] {
+  @extend %theme;
+  background-color: $grey;
+  margin: 1em em(5px);
+  @extend %centertext;
+}
 
 .centered {
   float: none;

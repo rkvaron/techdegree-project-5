@@ -5,4 +5,18 @@
 //Set button background colors
 .btn {
   @include bg-colors($ui-colors);
+  width: 100%;
+}
+
+[class*="btn"] {
+  width: 100%;
+  @extend %theme;
+  border: none;
+  text-transform: uppercase;
+  font-size: .9em;
+  font-weight: $font-weight--bold;
+  @include mq(medium) {
+    width: 17%;
+    margin: 0 1%;
+  }
 }

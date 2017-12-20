@@ -32,3 +32,16 @@
     @error "No value could be retrieved for `#{$break}`. "
   }
 }
+
+//Grid columns
+@mixin g-columns {
+  @for $i from 1 through $g-col-count {
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width);
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+
+    //generat column modifier classes
+    &--#{$i} {
+      width: percentage($target/$context);
+    }
+  }
+}
