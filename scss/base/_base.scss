@@ -10,11 +10,8 @@
 }
 
 p {
+  @extend %text;
   color: palette(grey, light);
-  font-size: $base__font-size;
-  font-family: $font-stack--primary;
-  font-weight: $font-weight--medium;
-  line-height: $base__line;
 }
 
 ul {

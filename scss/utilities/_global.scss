@@ -4,8 +4,8 @@
 
 //Font Stacks
 $font-url--google       : 'http://fonts.googleapis.com/css?family=Arimo:100,300,400,700,900';
-$font-stack--primary    : 'Arimo', Helvetica, Arial, sans-serif;
-$font-stack--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-stack--primary    : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-stack--secondary  : 'Arimo', Helvetica, Arial, sans-serif;
 
 // Font Weights
 
@@ -64,6 +64,19 @@ $ui-colors: (
   error   : $sunglo,
   warning : $coral,
   info    : $purple-majesty
+);
+
+// Grid display background colors
+
+$circles-grid: (
+	grid__col--12 : lighten($viking, 10%),
+	grid__col--8  : lighten($coral, 10%),
+	grid__col--7  : lighten($sunglo, 10%),
+	grid__col--6  : darken($malibu, 20%),
+	grid__col--4  : lighten($malibu, 12%),
+	grid__col--5  : lighten($emerald, 10%),
+	grid__col--2  : #C5E2CE,
+	grid__col--3  : #deb2ee
 );
 
 // Text

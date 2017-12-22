@@ -14,11 +14,11 @@
 //Media query mixin
 @mixin mq($break) {
   @if $break == 'small' {
-    @media (min-width: $brkpoint--sm) and (max-width: $breakpoint--md) {
-      @context;
+    @media (max-width: $brkpoint--md) {
+      @contet;
     }
   }
-  @if $break == 'medium' {
+  @else if $break == 'medium' {
     @media (min-width: $brkpoint--md + 1) {
       @content;
     }
@@ -36,12 +36,43 @@
 //Grid columns
 @mixin g-columns {
   @for $i from 1 through $g-col-count {
-    $context: g-context($g-col-width, $g-col-count, $g-gutter-width);
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
     $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
 
     //generat column modifier classes
     &--#{$i} {
       width: percentage($target/$context);
     }
+  }
+}
+
+
+// Flexbox settings
+
+@mixin flexbox($display: flex,  $flex-direction: null, $flex-wrap: null, $justify-content: null,) {
+  display: $display;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+  justify-content: $justify-content;
+}
+//Element and Modifier BEM Selectors
+
+@mixin e($element){
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin m($modifier){
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+//Adjacent sibling margins for grid
+@mixin doubly($margin: 1em) {
+  & + & {
+    margin-left: $margin;
+    @content;
   }
 }

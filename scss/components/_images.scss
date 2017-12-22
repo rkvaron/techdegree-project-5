@@ -1,22 +1,23 @@
 // ==========================================================================
 // IMAGES styles
 // ==========================================================================
-.img--logo {
-  @extend %center;
-  margin-top: em(42px);
-  margin-bottom: em(42px);
-}
-
-.img--avatar {
-  @extend %center;
-  @extend %clearfix;
-  padding: 1em 0;
-}
-
-.img--frame {
-  padding: 1em;
-  border: 1px solid palette(grey, x-light);
-  @include mq(medium) {
-      margin: 2em;
+.img {
+  @include m(logo) {
+    @extend %center;
+    margin-top: em(42px);
+    margin-bottom: em(30px);
+  }
+  @include m(avatar) {
+    @extend %center;
+    @extend %clearfix;
+    padding: 2em 0 1em 0;
+  }
+  @include m(frame) {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid palette(grey, x-light);
+    @include mq(medium) {
+        margin: 1em;
+    }
   }
 }

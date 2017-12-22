@@ -4,26 +4,19 @@
 
 .form {
   text-size: .7em;
-
-  &__label--hidden {
+  @include e(label--hidden) {
     display: none;
-
   }
-  &__input {
-    width: 90%;
+
+  @include e(input) {
+    width: 95%;
     @extend %clearfix;
     @extend %center;
-    border: none;
-    border-bottom: 5px solid $color-primary;
-    font-size: .85em;
-    line-height: 2em;
-    font-weight: $font-weight--bold;
-    padding: 1em;
-    margin-bottom: 1em;
+    @extend %form-input;
   }
+
   .btn--default {
     margin-top: em(20px);
     width: 100%;
-    @extend %clearfix;
   }
 }

@@ -2,12 +2,6 @@
 // GRID styles
 // ==========================================================================
 
-//Calculate grid column width & create classes
-.grid__col{
-@include mq(medium){
-    @include g-columns;
-  }
-}
 
 .container {
   	@extend %clearfix;
@@ -25,19 +19,68 @@
   	}
   }
 
-.grid__row {
-  @extend %clearfix;
+.grid {
+    @include e(row){
+      display: flex;
+      flex-direction: column;
+
+      margin-top: 1em;
+      margin-bottom: 2em;
+      @extend %clearfix;
+
+      @include mq(medium){
+        flex-direction: row;
+
+      }
+    }
+    //generates grid column width percentages & creates grid classes
+    @include e(col) {
+      @include mq(medium){
+          @include g-columns;
+        }
+    }
 }
 
-div[class*="theme__colors"] {
+[class^="grid__col--"] {
+  @include mq(medium) {
+    @include doubly(percentage($g-gutter-width / $context));
+    float: left;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    &:last-of-type {
+      float: right;
+    }
+  }
+}
+
+.theme__poly {
+	.grid [class*="grid__col"] {
+  	font-weight: $font-weight--thin;
+		margin-bottom: em(16px);
+
+	}
+}
+[class*="theme__colors"] {
   @extend %theme;
-  background-color: $grey;
-  margin: 1em em(5px);
-  @extend %centertext;
+
+}
+
+@each $value, $color in $circles-grid {
+	.#{$value}.theme__colors {
+		background-color: $color;
+    color: $grey;
+      @include mq(medium){
+          text-align: center;
+          &.centered {
+            margin-left: auto;
+            margin-right: auto;
+          }
+      }
+
+	}
 }
 
 .centered {
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
+  @extend %center;
 }

@@ -2,9 +2,7 @@
 // TYPOGRAPHY styles
 // ==========================================================================
 .link {
-  color: $color-secondary;
-    text-decoration: none;
-    font-weight: $font-weight--bold;
+  @extend %link;
 }
 
 .blockquote {
@@ -20,22 +18,27 @@
 }
 
 .headline {
+
   &--primary{
     color: $color-primary;
     margin-left: em(10px);
-    margin-bottom: em(20px);
+    @extend %spaceafter;
+    margin-top: 0;
   }
   &--secondary{
+    @extend %text;
     color: palette(grey, x-light);
     font-weight: $font-weight--light;
-    margin: 1.2em 0;
-    padding-top: em(30px);
-    padding-bottom: em(30px);
+    margin-top: em(42px);
+    margin-bottom: 3em;
   }
 }
 .card {
-
+  @extend %spaceafter;
   p {
     padding-right: 2em;
+  }
+  .headline--secondary {
+    margin-bottom: em(16px);
   }
 }

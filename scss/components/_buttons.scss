@@ -2,21 +2,19 @@
 // BUTTON styles
 // ==========================================================================
 
-//Set button background colors
-.btn {
-  @include bg-colors($ui-colors);
-  width: 100%;
-}
-
+//Adding button stylesheet
 [class*="btn"] {
   width: 100%;
   @extend %theme;
-  border: none;
-  text-transform: uppercase;
-  font-size: .9em;
-  font-weight: $font-weight--bold;
+  @extend %button;
+  @extend %clearfix;
   @include mq(medium) {
     width: 17%;
     margin: 0 1%;
   }
+}
+
+//Set button background colors
+.btn {
+  @include bg-colors($ui-colors);
 }

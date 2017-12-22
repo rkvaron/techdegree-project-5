@@ -1,50 +1,33 @@
 // ==========================================================================
 // NAVIGATION styles
 // ==========================================================================
-.grid__row,
 .nav {
-    display: flex;
-    flex-direction: column;
-  }
-
-.grid__row {
-  @include mq(medium){
-    flex-direction: row;
-  }
-}
-
-.nav {
-  margin-top: 2em;
-  margin-bottom: em(50px);
-  @extend %center;
-  @include mq(medium){
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 10%;
-  }
-}
-
-.nav__item a {
-  @extend %center;
-  @extend %centertext;
-  ßmargin: 0 em(10px);
-  font-weight: $font-weight--light;
-  font-size: 1.05em;
-  padding: em(8px) em(10px);
-  margin: 5px 0;
-  border-radius: $br--default;
-  text-decoration: none;
-  color: palette(grey, light);
-  &:hover{
-    background-color: $color-primary;
-    color: $white;
-  }
-  @include mq(medium) {
-    display: inline-block;
-  }
-}
-.nav__item {
-  @include mq(medium) {
-    margin: em(20px) em(10px);
-  }
+    @include flexbox(flex, column);
+    margin-top: 1em;
+    margin-bottom: em(50px);
+    @extend %center;
+    @include mq(medium) {
+      @include flexbox($flex-direction: row, $justify-content: flex-end);
+      margin-top: 2.5em;
+    }
+    @include mq(large){
+      margin-right: 15%;
+    }
+    @include e(item) {
+      a {
+        @extend %center;
+        @extend %centertext;
+        @extend %nav-item-link;
+        &:hover{
+          background-color: $color-primary;
+          color: $white;
+        }
+        @include mq(medium) {
+          display: inline-block;
+        }
+      }
+      @include mq(medium) {
+        margin: em(20px) em(10px);
+      }
+    }
 }
