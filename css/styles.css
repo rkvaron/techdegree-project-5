@@ -653,14 +653,12 @@ p {
 .btn--info {
   background-color: #927bc1; }
 
-.form {
-  text-size: .7em; }
-  .form__label--hidden {
-    display: none; }
-  .form__input {
-    width: 95%; }
-  .form .btn--default {
-    margin-top: 1.25em;
-    width: 100%; }
+.form__label--hidden {
+  display: none; }
+.form__input {
+  width: 95%; }
+.form .btn--default {
+  margin-top: 1.25em;
+  width: 100%; }
 
 /*# sourceMappingURL=styles.css.map */
